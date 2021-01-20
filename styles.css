@@ -777,11 +777,17 @@ margin: 1rem;
 }
 
 /* COMPUTER VISION  */
-/* NIGHTINGALE */
 
+
+/* NIGHTINGALE */
 .night-wrapper {
     width:90vw;
     margin:auto;
+}
+
+/* BLENDER */
+.link-tutorials{
+    font-size: 1.6rem;
 }
 
 
