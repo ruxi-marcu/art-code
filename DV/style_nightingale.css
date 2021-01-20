@@ -1,0 +1,61 @@
+/* h1 {
+    text-align: center;
+    color: #004080;
+    font-family: 'Courier New', Courier, monospace;
+} */
+/* div {
+    text-align: center;
+} */
+#night{
+    text-align: center;
+    font-size: 16px;
+}
+path {
+    stroke: #000000;
+    stroke-width: 0.1;
+} 
+
+.graph1,.forText1 {
+    transform: matrix(5,0,0,5,700,250);
+}
+
+.graph2,.forText2 {
+    transform: matrix(5,0,0,5,200,250);
+}
+
+.disease {
+
+    fill: rgb(205,216,222);
+}
+
+.wounds {
+    fill: rgb(221, 177, 174);
+}
+.outline {
+    stroke:rgb(27, 15, 15);
+    stroke-width: 0.5;
+}
+
+.forText1,.forText2 {
+    stroke: none;
+}
+
+textPath {
+    /* startOffset: 10%; */
+    /* font-size: 50%; */
+    font-size: 55%;
+}
+span {
+    font-size: smaller;
+}
+.small {
+    font-size: smaller;
+}
+.dashLine {
+    stroke:rgb(27, 15, 15);
+    fill: none;
+    stroke-dasharray: 5,5;
+    stroke-width: 0.5;
+}
+
+

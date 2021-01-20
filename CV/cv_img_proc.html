@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Image Processing</title>
+
+    <!-- HAMBURGER MENU  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header id="p-header"></header>
+
+    <!-- WHAT IS  -->
+    <section class="what-is" id="what-is">
+        <div class="container">
+            <!-- MY PROJECTS HEADLINE  -->
+            <div class="section-headline">
+                <h1 class="headline">What is it?</h1>
+            </div>
+            <!-- WHAT IS TEXT  -->
+            <div class="what-is-desc">
+                <p>Is's a subcatecory of signal processing.</p>
+                <p>Bellow are some examples of different operations made on images.</p>
+                <p>Some are transformationss on each pixel like calculating the inverse, grey scale and some are using
+                    convolution like: edge-detection, emboss and ...</p>
+                <p>Bellow there are some sample images for exemplifying but you can also load your own picture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILE LOADER  -->
+    <section class="choose-file">
+        <div class="container">
+            <div class="section-headline">
+                <h1 class="headline">File Loader</h1>
+            </div>
+            <div class="file-loader">
+                <h2>choose from the sample pictures</h2>
+                <div class="sample-pics">
+                    <div class="img-wrap"><img class="sample-img" src="../img/cv/StripedCat.png" alt="" /></div>
+                    <div class="img-wrap"><img class="sample-img" src="../img/cv/tiger.jpg" alt="" /></div>
+                </div>
+                <!-- <div class="file-wrap"> -->
+                <h2>or choose your own picture</h2>
+                <!-- </div> -->
+                <div class="file-input">
+                    <input type="file" id="imageLoader" name="imageLoader" />
+                    <label for="imageLoader" class="custom-file-upload" id="imageLoaderLabel">
+                        Choose File
+                    </label>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="convolution">
+        <div class="container">
+            <div class="section-headline">
+                <h1 class="headline">Output</h1>
+            </div>
+            <div class="convolution-output">
+                <div class="init-img">
+                    <h2 class="conv-headline">Initial Image</h2>
+                    <canvas id="canv-init" width="400" height="300"></canvas>
+                </div>
+
+                <h2 class="conv-headline">Color Inversion </h2>
+                <div class=inverse-img-cell>
+                    <h2>The Negative Effect</h2>
+                    <p>Takes the color of every pixel and calculates the inverted color.<br>
+                        Every pixel is formed of red(R), green(G) and blue(B) which have values between 0 and 255,
+                        so the inverse will be:
+                        <math class="math-formula" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>R</mi>
+                            <mo>=</mo>
+                            <mn>255</mn>
+                            <mo>-</mo>
+                            <mi>R</mi>
+                        </math>
+                        <math class="math-formula" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>G</mi>
+                            <mo>=</mo>
+                            <mn>255</mn>
+                            <mo>-</mo>
+                            <mi>G</mi>
+                        </math>
+                        <math class="math-formula" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>B</mi>
+                            <mo>=</mo>
+                            <mn>255</mn>
+                            <mo>-</mo>
+                            <mi>B</mi>
+                        </math>
+                    </p>
+                    <canvas id="canv-inv" width="400" height="300"></canvas>
+                </div>
+
+                <div class="greyscale">
+                    <h2 class="conv-headline">Greyscale</h2>
+                    
+                    <div class="grey-row">
+                        <div class="grey-cell">
+                            <h2>Greyscale with average</h2>
+                            <p>Every pixel is formed of red(R), green(G) and blue(B) so for the average method the new R
+                                G B values are
+                                calculated by calculating the average of the 3 colors.
+                                <math class="math-formula" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi>greyscale</mi>
+                                    <mo>=</mo>
+                                    <mo>(</mo>
+                                    <mi>R</mi>
+                                    <mo>+</mo>
+                                    <mi>G</mi>
+                                    <mo>+</mo>
+                                    <mi>B</mi>
+                                    <mo>)</mo>
+                                    <mo>&divide</mo>
+                                    <mn>3</mn>
+                                </math>
+                            </p>
+                            <canvas id="canv-gs-avg" width="400" height="300"></canvas>
+                        </div>
+
+                        <div class="grey-cell">
+                            <h2>Greyscale with luminance method</h2>
+                            <p>The luminosity method uses a formula that takes into accont human sensitivity to
+                                different wavelengths. By
+                                using this formula the result is more vivid as it preserves the luminosity of the image.
+                                <math class="math-formula" id="long-formula" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi>greyscale</mi>
+                                    <mo>=</mo>
+                                    <mo>(</mo>
+                                    <mn>0.3</mn>
+                                    <mo>&times</mo>
+                                    <mi>R</mi>
+                                    <mo>)</mo>
+                                    <mo>+</mo>
+                                    <mo>(</mo>
+                                    <mn>0.59</mn>
+                                    <mo>&times</mo>
+                                    <mi>G</mi>
+                                    <mo>)</mo>
+                                    <mo>+</mo>
+                                    <mo>(</mo>
+                                    <mn>0.11</mn>
+                                    <mo>&times</mo>
+                                    <mi>B</mi>
+                                    <mo>)</mo>
+                                </math>
+                            </p>
+                            <canvas id="canv-gs-form" width="400" height="300"></canvas>
+                        </div>
+
+                        <div class="thresh-cell">
+                            <h2>Threshold</h2>
+                            <p>Creates a binary image. For this example the pixels were set to be either back or white
+                                if the value was lower or
+                                greater then the threshold.
+                            </p>
+                            <canvas id="canv-thresh" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="transform">
+                    <h2 class="conv-headline">Transformations</h2>
+                    <div class="transform-row">
+                    <div class="transf-mirror-cell">
+                        <h2>Transformation Mirror</h2>
+                        <p>Moves the pixels in the image to result into the mirror image of the initial picture.</p>
+                        <canvas id="canv-mirror" width="400" height="300"></canvas>
+                    </div>
+
+                    <div class="transf-updown-cell">
+                        <h2>Transformation Upside Down</h2>
+                        <p>Moves the pixels in the image to result into the upside down image of the initial
+                            picture.</p>
+                        <canvas id="canv-updown" width="400" height="300"></canvas>
+                    </div>
+                </div>
+                </div>
+
+                <div class="convolution-row">
+                    <h2 class="conv-headline">Convolution</h2>
+                    <p>Convolution is the process of adding each element to it's local neighbours wheighted by a kernel.
+                        Based on the type of kernel used, different effects can be obtained.<br>
+                        Bellow are some examples displaying the kernel used and the result obtained.
+                    </p>
+                    <div class="edge-row">
+                        <div class="edge-cell">
+                            <h2>Edge Detection Horizontal</h2>
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mo> [ </mo>
+                                        <mtable>
+                                            <mtr>
+                                                <mn>&nbsp; 1</mn>
+                                                <mn>&nbsp; 1</mn>
+                                                <mn>&nbsp; 1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>&nbsp; 0</mn>
+                                                <mn>&nbsp; 0</mn>
+                                                <mn>&nbsp; 0</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>-1</mn>
+                                                <mn>-1</mn>
+                                            </mtr>
+                                        </mtable>
+                                        <mo> ] </mo>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <canvas id="canv-edgeh" width="400" height="300"></canvas>
+                        </div>
+
+                        <div class="edge-cell">
+                            <h2>Edge Detection Vertical</h2>
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mo> [ </mo>
+                                        <mtable>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 0</mn>
+                                                <mn>&nbsp; 1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 0</mn>
+                                                <mn>&nbsp; 1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 0</mn>
+                                                <mn>&nbsp; 1</mn>
+                                            </mtr>
+                                        </mtable>
+                                        <mo> ] </mo>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <canvas id="canv-edgev" width="400" height="300"></canvas>
+                        </div>
+
+                        <div class="edge-cell">
+                            <h2>Outline</h2>
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mo> [ </mo>
+                                        <mtable>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>-1</mn>
+                                                <mn>-1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 8</mn>
+                                                <mn>-1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>-1</mn>
+                                                <mn>-1</mn>
+                                            </mtr>
+                                        </mtable>
+                                        <mo> ] </mo>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <canvas id="canv-outline" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="blur-sharp-row">
+                        <div class="bur-sharp-cell">
+                            <h2>Gaussian Blur</h2>
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mo> [ </mo>
+                                        <mtable>
+                                            <mtr>
+                                                <mn>&nbsp;1</mn>
+                                                <mn>&nbsp;2</mn>
+                                                <mn>&nbsp;1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>&nbsp;2</mn>
+                                                <mn>&nbsp;4</mn>
+                                                <mn>&nbsp;2</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>&nbsp;1</mn>
+                                                <mn>&nbsp;2</mn>
+                                                <mn>&nbsp;1</mn>
+                                            </mtr>
+                                        </mtable>
+                                        <mo> ] </mo>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <canvas id="canv-gauss" width="400" height="300"></canvas>
+                        </div>
+
+                        <div class="bur-sharp-cell">
+                            <h2>Sharpen</h2>
+
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mo> [ </mo>
+                                        <mtable>
+                                            <mtr>
+                                                <mn>&nbsp;0</mn>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp;0</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp;5</mn>
+                                                <mn>-1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>&nbsp;0</mn>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp;0</mn>
+                                            </mtr>
+                                        </mtable>
+                                        <mo> ] </mo>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <canvas id="canv-sharp" width="400" height="300"></canvas>
+
+                        </div>
+                    </div>
+
+                    <div class="emb-row">
+                        <div class="emb-cell">
+                            <h2>Emboss</h2>
+
+                            <p>
+                                Kernel is applyed to greyscale image.
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mo> [ </mo>
+                                        <mtable>
+                                            <mtr>
+                                                <mn>-2</mn>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 0</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 1</mn>
+                                                <mn>&nbsp; 1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>&nbsp; 0</mn>
+                                                <mn>&nbsp; 1</mn>
+                                                <mn>&nbsp; 2</mn>
+                                            </mtr>
+                                        </mtable>
+                                        <mo> ] </mo>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <canvas id="canv-emboss" width="400" height="300"></canvas>
+                        </div>
+
+                        <div class="emb-cell">
+                            <h2>Emboss colored</h2>
+                            <p>
+                                The kernel is applyed directly on the colored image.
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mo> [ </mo>
+                                        <mtable>
+                                            <mtr>
+                                                <mn>-2</mn>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 0</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>-1</mn>
+                                                <mn>&nbsp; 1</mn>
+                                                <mn>&nbsp; 1</mn>
+                                            </mtr>
+                                            <mtr>
+                                                <mn>&nbsp; 0</mn>
+                                                <mn>&nbsp; 1</mn>
+                                                <mn>&nbsp; 2</mn>
+                                            </mtr>
+                                        </mtable>
+                                        <mo> ] </mo>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <canvas id="canv-emboss-rgb" width="400" height="300"></canvas>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer></footer>
+
+    <!-- JQUERY  -->
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- MATH LIBRARY  -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js">
+        </script>
+    <!-- SCRIPT FOR LOADING HEADER AND FOOTER  -->
+    <script src="../UTIL/load_header_footer.js"></script>
+    <script src="cv_img_proc.js"></script>
+</body>
+
+</html>

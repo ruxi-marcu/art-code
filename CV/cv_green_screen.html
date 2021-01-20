@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8 />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+
+    <title>Green Screen</title>
+    <!-- HAMBURGER MENU  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- STYLES  -->
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="stylesheet" type="text/css" href="gr-styles.css" />
+  </head>
+  <body>
+
+  <header class="p-header"></header>
+  
+  <section>
+  <div class="gr-flex-container">
+    <div id="gr-div-4-video">
+      <video id="gr-video" width="800" src="../img/cv/video.mp4" autoplay muted loop></video>
+    </div>
+    <div>
+      <canvas id="gr-output-canvas" width="800" height="450"></canvas>
+      <!-- width="800" height="450" -->
+    </div>
+  </div>
+</section>
+
+  <footer></footer>
+
+  <!-- <script>
+    let video,video2,c1,ctx1,c_tmp,ctx_tmp; 
+    function init() {
+      video = document.getElementById('video');
+
+      video2 = document.createElement('video');
+      video2.src = "fire.mp4"
+      video2.muted = true;
+      video2.autoplay = true;
+
+      // video.src="fire.mp4";
+
+      c1 = document.getElementById('output-canvas');
+      ctx1 = c1.getContext('2d');
+
+      c_tmp = document.createElement('canvas');
+      c_tmp.setAttribute('width', 800);
+      c_tmp.setAttribute('height', 450);
+      ctx_tmp = c_tmp.getContext('2d');
+
+      video.addEventListener('play', computeFrame );
+    }
+ function computeFrame() {
+
+  if (video.paused || video.ended) {
+    return;
+  }
+  video2.play();
+  // console.log(video2.paused + " "+ video2.ended);
+
+  ctx_tmp.drawImage(video, 0, 0, 800 , 450 );
+  let frame = ctx_tmp.getImageData(0, 0, 800 , 450 );
+  // console.log("bla "+video.videoWidth)
+
+  ctx_tmp.drawImage(video2, 0, 0, 800 , 450 );
+  let frame2 = ctx_tmp.getImageData(0, 0, 800 , 450 );
+
+  // for (let i=0; i<frame.data.length /4; i++){
+  // frame.data[i * 4 + 0] = 255 - frame.data[i * 4 + 0];
+  // frame.data[i * 4 + 1] = 255 - frame.data[i * 4 + 0];
+  // frame.data[i * 4 + 2] = 255 - frame.data[i * 4 + 0];
+  // }
+
+  // console.log(frame.data.length);
+  // 1,440,000 / 4 = 360,000 = 800 x 450
+  //8,294,400 = 3840 x 2160
+
+  for (let i = 0; i < frame.data.length /4; i++) {
+    let r = frame.data[i * 4 + 0];
+    let g = frame.data[i * 4 + 1];
+    let b = frame.data[i * 4 + 2];
+
+    if (r > 70 && r < 160 && g > 95 && g < 220 && b > 25 && b < 150) 
+    {  
+        frame.data[i * 4 + 0] = frame2.data[i * 4 + 0];
+        frame.data[i * 4 + 1] = frame2.data[i * 4 + 1];
+        frame.data[i * 4 + 2] = frame2.data[i * 4 + 2];
+    }
+  }
+  ctx1.putImageData(frame, 0, 0);
+  setTimeout(computeFrame, 0);
+}
+
+  document.addEventListener("DOMContentLoaded", () => {
+    init();
+  });
+  </script> -->
+<!-- JQUERY  -->
+<script
+src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<!-- SCRIPT FOR LOADING HEADER AND FOOTER  -->
+<script src="../UTIL/load_header_footer.js"></script>
+<script src="green-scr.js"></script>
+
+  </body>
+</html>

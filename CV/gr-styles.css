@@ -1,0 +1,35 @@
+.gr-flex-container {
+  /* width: 90vw;
+  margin: auto; */
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.gr-flex-container>div {
+  font-size: 0px;
+  width: 98vw;
+  margin-bottom: 10px;
+}
+#gr-video {
+  width: 100%;
+  border: 1px solid black;
+}
+#gr-output-canvas {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+
+@media (min-width: 768px) {
+  .gr-flex-container {
+    flex-direction: row;
+  }
+
+  .gr-flex-container>div {
+    font-size: 0px;
+    width: 48vw;
+  }
+}
+

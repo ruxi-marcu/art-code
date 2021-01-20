@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+
+    <!-- HAMBURGER MENU  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* body{
+            height:100vh;
+        } */
+        .face-detect {
+            width: 100vw;
+            height:100vh; 
+            position:relative;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;  */
+            /* display: block; */
+        }
+
+        .fd-wrapper{
+            /* background-color: lightblue; */
+            display: block;
+            position:relative;
+            width:100%; 
+            height:100%; 
+            margin: auto;
+        }
+
+        video {
+            outline: 3px solid red;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            max-width: 100%;
+        }
+
+        #face-detect-canv {
+            outline: 2px solid green;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);  
+        
+        }
+
+        /* body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas {
+            position:absolute;
+        }
+        video {
+            outline: 3px solid red;
+        } */
+    </style>
+</head>
+
+<body>
+    <header class="p-header"></header>
+
+    <section class="face-detect" id="face-detect">
+        <div class="fd-wrapper" id="fd-wrapper">
+            <video id="video" width="720" height="560" autoplay muted></video>
+        </div>
+    </section>
+
+    <footer></footer>
+
+    <!-- JQUERY  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+        </script>
+    <!-- LOAD HEADER AND FOOTER  -->
+    <script src="../UTIL/load_header_footer.js"></script>
+
+    <!-- SCRIPT FOR FACE DETECTION  -->
+    <script src="face-api.min.js"></script>
+    <script src="face_detect.js"></script>
+
+</body>
+
+</html>
