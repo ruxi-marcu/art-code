@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8 />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+
+    <title>Green Screen</title>
+    <!-- HAMBURGER MENU  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- STYLES  -->
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="stylesheet" type="text/css" href="gr-styles.css" />
+  </head>
+  <body>
+
+  <header class="p-header"></header>
+  
+  <section>
+  <div class="gr-flex-container">
+    <div id="gr-div-4-video">
+      <video id="gr-video" width="800" src="./short.mp4" autoplay muted loop></video>
+    </div>
+    <div>
+      <canvas id="gr-output-canvas" width="800" height="450"></canvas>
+      <!-- width="800" height="450" -->
+    </div>
+  </div>
+</section>
+
+  <footer></footer>
+
+<script
+src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<!-- SCRIPT FOR LOADING HEADER AND FOOTER  -->
+<script src="../UTIL/load_header_footer.js"></script>
+<!-- <script src="green-scr.js"></script> -->
+<script src="cv-pixel-video.js"></script>
+
+  </body>
+</html>

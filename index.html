@@ -182,28 +182,31 @@
                     <h1 class="headline">Contact</h1>
                 </div>
 
-                <form class="contact-form" action="https://formspree.io/f/mzbkoryv" method="post">
+                <!-- <div class="some-bla-bla"> -->
+                    <p class="contact-p">If you want to contact me for working on a project or you just want to say hi use the following form: 
+                    </p>
+                <!-- </div> -->
+
+                <!-- <form class="contact-form" name="my-contact-form" action="https://formspree.io/f/mzbkoryv" method="post" onsubmit="validateform()"> -->
+                <form class="contact-form" id="cont-form" name="my-contact-form" action="https://formspree.io/f/mzbkoryv" method="post">
+
                     <label for="fname">First Name</label>
                     <input type="text" id="fname" name="fname" placeholder="First name">
                     <label for="lname">Last Name</label>
                     <input type="text" id="lname" name="lname" placeholder="Last name">
                     <label for="email">E-mail</label>
-                    <input type="text" id="email" name="mail" placeholder="Your e-mail">
+                    <input type="text" id="email" name="email" placeholder="Your e-mail">
                     <label for="subject">Subject</label>
-                    <input type="text" name="subject" placeholder="Subject">
+                    <input type="text" id="subject" name="subject" placeholder="Subject">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Message"></textarea>
-                    <button type="submit" name="submit">SEND</button>
+                    <textarea id="message" id="message" name="message" placeholder="Message"></textarea>
+                    <br>
+                    <p id="form-error-msg">ERROR</p>
+                    <input type="submit" name="submit" >SEND</button>
 
                 </form>
 
-                <!-- ABOUT TEXT  -->
-                <!-- row #1 -->
-                <div class="some-bla-bla">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore id iure laborum fugiat
-                        consectetur, odit dolore corrupti, quibusdam nemo voluptatum dolor suscipit impedit ipsam cum
-                        dignissimos, voluptas nesciunt similique consequuntur?</p>
-                </div>
+            
             </div>
         </section>
 
@@ -230,10 +233,15 @@
     <!-- JQUERY  -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+
+    <!-- JQUERY VALIDATE FORM -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
 
     <script src="./script.js" type="text/javascript"></script>
-    <script src="./contact.js" type="text/javascript"></script>
+    <!-- <script src="./contact.js" type="text/javascript"></script> -->
 
 </body>
 
