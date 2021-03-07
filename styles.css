@@ -864,6 +864,28 @@ margin: 1rem;
     background-color: initial;
 }
 
+/* CG.HTML */
+.cg-grid-projects {
+    display:block;
+    margin:auto;
+}
+.each-proj{
+    background-color: var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+/*
+@media screen and (min-width: 900px){}
+.each-proj {
+    display: flex;
+    align-items: center;
+}
+
+.rr-proj{
+
+} */
+
 /* COMPUTER VISION  */
 
 
