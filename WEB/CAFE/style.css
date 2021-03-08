@@ -1,0 +1,470 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-font-color-dark: #252525;
+
+    --link-active: rgb(255, 165, 10);
+
+    --link-clicked: rgb(255, 197, 72);
+    --header-color: orange;
+    --menu-bar-color:rgba(0,0,0,0.8);
+    --menu-list-color:rgba(0,0,0,0.9);
+
+    --link-background-color: rgba(255,165,10,0.1);
+
+    --link-primary-color: orange;
+        /* --link-active: rgb(29, 139, 14); */
+        /* --link-clicked: rgba(2, 255, 2, 0.849); */
+
+    --font-headline: 'Kaushan Script';
+    --font-subheadline: 'Calligraffitti';
+    --font-body: 'Cabin';
+}
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+} 
+body {
+    overflow-x: hidden;
+    font-family: var(--font-body);
+}
+p {
+    font-size:1.6rem;
+    text-align: center;
+}
+section {
+    padding: 0 0 2.5rem 0;
+}
+.container {
+    width: 100%;
+    /* max-width: 77rem; */
+    padding: 0 1.5rem;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* HEADER AND NAVIGATION  */
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:1;
+    background-color:var(--menu-bar-color) ; 
+}
+
+.nav {
+    height: 7.2rem;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.logo {
+    height: 70%;
+}
+
+.menu-toggle {
+    font-size: 2.2rem;
+    /* color: var(--link-primary-color); */
+    color: var(--link-active);
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 2.5rem;
+    cursor: pointer;
+    z-index: 1500;
+}
+.open .menu-toggle{
+    position:fixed;
+    top:3.5rem;
+    right:2.5rem; 
+    background-color: var(--menu-bar-color);
+    /* padding: 2rem; */
+}
+.fa-times {
+    display: none;
+}
+.open .fa-times {
+    display: block;
+    color: var(--link-active);
+}
+
+.open .fa-bars {
+    display: none;
+}
+
+.nav-list {
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:80%;
+    height:100vh;
+    background-color: var(--main-font-color-dark);
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around; /*leave space between cells */
+    padding: 4.4rem;
+
+    z-index: 1250;
+    transform: translateX(-100%); /*for animation, nore efficient then flex?*/
+    transition: transform .5s;
+}
+
+.open .nav::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.open .nav-list {
+    transform: translateX(0);
+}
+.nav-item {
+    border-bottom: 2px var(--link-active) solid;
+    border-radius: 7px;
+    padding: 1rem;
+}
+.nav-link{
+    color: var(--link-active);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width:900px) {
+.menu-toggle {
+    display: none;
+}
+.nav {
+    margin: 0 2rem;
+    justify-content: space-between;
+}
+.nav-list {
+    flex-direction: row;
+    position: initial;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    justify-content: space-between;
+    transform: initial;
+
+    padding: 2rem; /*need to see why padding overflows*/
+}
+.nav-item {
+    border-bottom: initial;
+    border-radius: initial;
+    padding: 2rem 2.3rem;
+}
+.nav-item:hover {
+    background-color: var(--link-background-color);
+}
+}
+
+
+/* HERO */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/hero.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: -1;
+}
+.sub-headline {
+    display: block;
+    font-size: 3rem;
+    font-family: var(--font-subheadline);
+    color: var(--header-color);
+    padding-bottom: 1rem;
+    /* opacity: 1; */
+    
+}
+
+.headline {
+    display: block;
+    color:white;
+    font-family: var(--font-headline);
+    font-size: 5.5rem;
+    padding-bottom: 0;
+    line-height: 40%; 
+    margin: 1rem 0 2rem 0;
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#line {
+    font-size: 1.75rem;
+    /* font-size: 2.5rem; */
+    color:var(--header-color);
+    /* background-color: yellow; */
+    /* padding-bottom: 2rem; */
+    /* z-index: 0; */
+}
+#line::before,
+#line::after {
+    content: '><';
+    display: inline-block;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: rotate .8s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes rotate {
+    0%{
+        transform :rotate(0deg);
+    }
+    100%{
+        opacity: 1;
+        transform :rotate(90deg);
+    }
+}
+.btn {
+    font-size: 1.2rem;
+    display: inline-block;
+    color: var(--header-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid var(--header-color);
+    background-color: var(--menu-bar-color);
+    padding:1rem;
+
+    /* position: relative;
+    cursor: pointer; */
+}
+
+
+/* SECTION STYLES  */
+.section-headline {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem 1rem 1rem;
+}
+
+@media screen and (min-width:900px) {
+    .headline {
+        font-size: 7rem;
+    }
+    .sub-headline {
+        font-size: 4rem;
+    }
+    .btn {
+        font-size: 1.7rem;
+    }
+}
+
+
+
+/* DISCOVER OUR STORY */
+.cafe-description {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+} 
+.headline-dark {
+    color: black;
+}
+.p-info {
+    margin: 1.5rem 0 2.5rem 0;
+}
+.body-btn {
+    background-color: transparent;
+}
+#page-line {
+    font-size: 1.75rem;
+}
+.cafe-info-img {
+    padding: 1rem;
+}
+
+@media screen and (min-width:900px) {
+    .cafe-info {
+        display:inline-flex;
+        align-items: center;
+    }
+    .cafe-info > div {
+        flex: 1;
+    }
+}
+
+/* THE PERFECT ATHMOSPHERE  */
+.athmosphere {
+    background: url('./img/athmosphere2.jpg') center;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+
+/* DISCOVER THE MENU  */
+.menu-description {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+} 
+.image-group {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-img {
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+}
+
+/* DISCOVER OUR PLACE  */
+.our-place-desc {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* THE PERFECT BLEND  */
+.blend {
+    background: url('./img/blend.jpg') center;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+/* FOOTER  */
+footer {
+    background-color: #121212;
+    color:#ffffff;
+    padding:1rem 0 3rem 0;
+    text-align: center;
+}
+.back-to-top i{
+    color:#ffffff;
+    padding: 1.5rem;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    margin-bottom: 2rem;;
+}
+.back-to-top i:hover{
+    color:var(--link-active);
+    border: 3px solid var(--link-active);
+
+}
+.footer-content-about {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.footer-content-divider {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+}
+.footer-content-divider>div {
+    padding: 2rem 0;
+}
+.social-media {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.headline-footer {
+    font-size: 3.5rem;
+}
+.social-icons {
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+}
+.social-icons i{
+    font-size: 2rem;
+    padding: 1rem;
+    color: #ffffff;
+}
+.social-icons i:hover {
+    cursor: pointer;
+    color: var(--link-active);
+}
+.newsletter-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.newsletter-form {
+    display: flex;
+    flex-direction: row;
+}
+.newsletter-input {
+    font-size: 2rem;
+}
+.newsletter-btn {
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: transparent;
+    padding: 0 0.2rem;
+}
+.newsletter-btn:hover {
+    cursor: pointer;
+    color: var(--link-active);
+}
+
+@media screen and (min-width:900px) {
+    section {
+        padding: 3rem 0;
+    }
+    .container {
+        padding: 0 3rem
+    }
+    .footer-content-divider {
+        flex-direction: row;
+    }
+    .footer-content-divider > div{
+        flex:1;
+    }
+    
+}
+
+
+/* ABOUT US  */
+.au-h1 {
+    color: var(--link-clicked);
+}
+

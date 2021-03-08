@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation & Augmented Reality</title>
+
+    <!-- HAMBURGER MENU  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header class="p-heder"></header>
+
+    <section class="about" id="about">
+        <div class="container">
+            <!-- MY PROJECTS HEADLINE  -->
+            <div class="section-headline">
+                <h1 class="headline">About</h1>
+            </div>
+
+            <!-- ABOUT TEXT  -->
+            <!-- row #1 -->
+            <div class="about-desc">
+                <p>This section incorporates a colection of projects made for the courses Computer Graphics and Real-Time Rendering.</p>
+                <p>Each project has a video that was uploadeed to Youtube showing how the program runs and next to it there is a short description.</p>
+                <p>The programs were made using C/C++ and OpenGl and the shading was made in GLSL.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects cg-proj">
+        <div class="container">
+            <!-- MY PROJECTS HEADLINE  -->
+            <div class="section-heading">
+                <h1 class="headline">Augmented Reality</h1>
+            </div>
+            <div class="cg-grid-projects">
+                <!-- GRID OF PROJECTS  -->
+                <div class="each-proj">
+                    <div class="cg-proj-headline">Semester Project</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>The application window is separated into two viewports, one the size of the entire window and a smaller
+                                one that shows the orthoghraphical projection from above.</p>
+                            <p>The objects are organized into two different hierarchical structures, one of whitch can be moved by
+                                keyboard.</p>
+                            <p>The small hierarchy is formed from two stars one of which has been scaled and rotates around the root.
+                            </p>
+                            <p>The large hierarchy is formed from 6 stars and is capable of doing multiple transformations:
+                                translations, rotations and also combined transformations that give the illusioon of walking.</p>
+                            <p>All the stars have light effects they support ambient , diffuse, specular light and shininess.</p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/P225OBgZAWc" frameborder="0" allow="accelerometer;
+                             autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section class="projects rr-proj">
+        <div class="container">
+            <!-- MY PROJECTS HEADLINE  -->
+            <div class="section-heading">
+                <h1 class="headline">Real-Time Animation</h1>
+            </div>
+            <div class="cg-grid-projects">
+                <!-- GRID OF PROJECTS  -->
+
+                <!-- Interactive Movie with Animated Character -->
+                <div class="each-proj">
+                    <div class="cg-proj-headline">Interactive Movie with Animated Character</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>The project is created in Unity. The environment and characters were taken from the Unity Asset
+                                Store.
+                                The animation starts with an overview camera that films the entire scene and after which focuses on
+the main character of the movie. The camera at the beginning is a Cinemachine Dolly Track camera
+The camera follows the desired path and then stops in front of the character after which some State-
+Driven cameras are used to follow the character how he is pushing the chest and then moving
+around to sit on a rock. For the state driven camera more virtual cameras were added that are
+triggered by the different animations of the character. There are cameras for walking, sitting
+throwing and idle state. All these cameras are mixed with normal cameras that were added at
+different times in the timeline.
+The animation of the character is triggered through script and also the chest pushing was made
+through script.
+The cameras for the next part of the movie are Unity cameras for which animations with keyframes
+were made. The order in which each camera should be active in the scene is set through a timeline.
+The timeline contains the cameras used in the scene and also the soundtrack. The sounds were
+added to the timeline at the particular moment when they are supposed to play.
+The character, the barbarian, come with some animations but more animations were added from
+Mixamo. The model was uploaded in Mixamo different animations were chosen and then exported
+without mesh to be used in Unity. After importing the new animations in Unity the animations had
+to be changed to humanoid mode and adapted for the character in order to work properly.
+The character also uses face animations that were added on a different layer of the characters
+Animator controller. For the facial animations an animation mask was created to blend together the
+animations from the two different layers and therefore the facial animations could work together
+with different body animations resulting in a complex movement of the character.
+
+The skeleton has its own script and animator controller. Different camera animations were created
+in order to capture the different close-ups of the two characters and emphasize the facial
+movements. At this point the character shows anticipation and exaggeration through its facial
+features by having exaggerated expressions that show astonishment and then fear.
+
+The cameras show the use of ease in and ease out. They use arcs and interpolate between different
+positions and rotations.
+The skeleton has its own script and its own animator controller. Different animations are triggered
+from the script at particular times. The skeleton is displayed idle, dragging the chest, turning and
+then walking towards the main character.
+Both characters are rotated by using quaternions and euler angles to rotate their game objects.
+Physics with rigid body property was used to create the movement of the characters by adding
+velocity to their respective rigid bodies.
+After running away from the skeleton, the barbarian encounters a little mummy that exemplifies one
+of the principles of animation, namely squash and stretch. This animation was created by using
+keyframe animation and creating a new animation for the mummy character.
+After the entire animation is played the user is left to control the main character.
+Particle systems were added to the scene in the spot where the character can be controlled by the
+user. When the game starts fire can be seen by the characters feet.
+
+The character can be controlled with the keyboard and mouse. The character can walk, run and hit
+with its axe.
+A different script was created to incorporate the game behavior of the character. The movement of
+the character was set at different speeds based on the character walking or running.
+The walking and running take as input values from the keys. Different animations for walking
+straight, walking to the left, to the right and backwards are blended together using blend trees. For
+running a different blend tree was created that blends together the running animations. In order to
+make the character run, the shift key has to be pressed while also pressing the movement keys.
+The mouse triggers the attack animation of the character by making the character twirl and hit with
+its axe.
+If there is no input from the user, the character returns to its default pose and that animation runs in
+a loop.
+                            </p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/T1kPRARaQVU" frameborder="0" allow="accelerometer;
+                             autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRANSMITTANCE EFFECTS -->
+                <!-- <div class="each-proj">
+                    <div class="cg-proj-headline">TRANSMITTANCE EFFECTS</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>ASSIGNMENT2 - TRANSMITTANCE EFFECTS
+                                The program uses a cubemap as the environment of the scene. The cubemap uses its own shader for
+                                displaying the cube and the textures.
+                                The application loads three objects (.obj files) a car, a teapot and a cube. The transmittance effects,
+                                Reflection, Refraction, Chromatic Dispersion and Fresnel, are all implemented in the shader files. The
+                                program can change the shaders by using the keyboard with the keys ‘t’ (reflection), ‘y’ (refraction),
+                                ‘u’ (Chromatic Dispersion’) and ‘I’ (Fresnel) so the effects can be changed and seen on all the objects
+                                while the program is running.
+                                The shader files create the transmittance effects by using the texture from the environment namely
+                                the textures of the cubemap.
+                                The program can also animate the objects by generating a rotating motion of the objects if the key
+                                ‘p’ is pressed.
+                                The scene can be manipulated by the use of the mouse and keyboard allowing movement within it
+                                and giving the possibility of viewing the objects from different angles.
+                                Libraries
+                                The libraries used for making the program are glfw, glew and stb_image, glm.
+                            </p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe src="https://www.youtube.com/embed/qvgyfhniP04" frameborder="0" allow="accelerometer;
+                              autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div> -->
+    
+                
+                
+            </div>
+        </div>
+    
+    </section>
+
+    <footer></footer>
+
+    <!-- JQUERY  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+        </script>
+    <!-- LOAD HEADER AND FOOTER  -->
+    <script src="../UTIL/load_header_footer.js"></script>
+</body>
+
+</html>

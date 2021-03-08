@@ -40,14 +40,25 @@
             <div class="cg-grid-projects">
                 <!-- GRID OF PROJECTS  -->
                 <div class="each-proj">
-                    <div class="cg-proj-video">
-                <iframe src="https://www.youtube.com/embed/kzi8jkF4yAc" frameborder="0" allow="accelerometer;
-                     autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-                </div>
-
-                <div class="cg-proj-desc">
-                    <p>The application window is separated into two viewports, one the size of the entire window and a smaller one that shows the orthoghraphical projection from above.</p>
+                    <div class="cg-proj-headline">Semester Project</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>The application window is separated into two viewports, one the size of the entire window and a smaller
+                                one that shows the orthoghraphical projection from above.</p>
+                            <p>The objects are organized into two different hierarchical structures, one of whitch can be moved by
+                                keyboard.</p>
+                            <p>The small hierarchy is formed from two stars one of which has been scaled and rotates around the root.
+                            </p>
+                            <p>The large hierarchy is formed from 6 stars and is capable of doing multiple transformations:
+                                translations, rotations and also combined transformations that give the illusioon of walking.</p>
+                            <p>All the stars have light effects they support ambient , diffuse, specular light and shininess.</p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe src="https://www.youtube.com/embed/kzi8jkF4yAc" frameborder="0" allow="accelerometer;
+                                            autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
     
             </div>
@@ -60,102 +71,172 @@
             <div class="section-heading">
                 <h1 class="headline">Real-Time Rendering</h1>
             </div>
-            <div class="grid-projects">
+            <div class="cg-grid-projects">
                 <!-- GRID OF PROJECTS  -->
-            
+
+                <!-- BLINNPHONG TOON COOKTORRANCE -->
                 <div class="each-proj">
-                    <div class="cg-proj-video">
-                        <!-- BLINNPHONG TOON COOKTORRANCE -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vqqYKmQpQ-I" frameborder="0" allow="accelerometer;
-                                    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                        </iframe>
+                    <div class="cg-proj-headline">REFLECTANCE</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p> I have created a scene into which I loaded two obj files a teapot and a star.
+                                The scene is displayed in 3 different viewports.
+                                For every viewport the objects are displayed with a different type of reflectance. The 3 types
+                                implemented are, from left to right, Blinn-Phong, Toon, and Cook-Torrance.
+                                I have implemented two different light sources, one with blue color and one with pink at different
+                                distances from the objects.
+                                The animation of the objects can be turned on and off by using the ‘p’ key.
+                                The specular, diffuse and shininess parameters can be increased or decreased from the keyboard
+                                while the animation in running, using the keys ‘a’,’z’,’s’,’x’ and ‘d’,’c’.
+                                The specular and shininess parameters are available only for Blinn-Phong and the diffuse parameter
+                                is common for both Blinn-Phong and Toon.
+                                For Cook-Torrance none of the 3 parameters will have any effect, since they are all calculated based
+                                on the distance from the light sources.
+                                For Cook-Torrance the object can be changed to appear either plastic either metallic, also from the
+                                keyboard with the keys ‘h’ and ‘n’.>
+                            </p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe src="https://www.youtube.com/embed/vqqYKmQpQ-I" frameborder="0" allow="accelerometer;
+                            autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
-        
-                    <!-- DESCRIPTION -->
-                    <div class="cg-proj-desc">
-                        <p>1 - REFLECTANCE
-                            I have created a scene into which I loaded two obj files a teapot and a star.
-                            The scene is displayed in 3 different viewports.
-                            For every viewport the objects are displayed with a different type of reflectance. The 3 types
-                            implemented are, from left to right, Blinn-Phong, Toon, and Cook-Torrance.
-                            I have implemented two different light sources, one with blue color and one with pink at different
-                            distances from the objects.
-                            The animation of the objects can be turned on and off by using the ‘p’ key.
-                            The specular, diffuse and shininess parameters can be increased or decreased from the keyboard
-                            while the animation in running, using the keys ‘a’,’z’,’s’,’x’ and ‘d’,’c’.
-                            The specular and shininess parameters are available only for Blinn-Phong and the diffuse parameter
-                            is common for both Blinn-Phong and Toon.
-                            For Cook-Torrance none of the 3 parameters will have any effect, since they are all calculated based
-                            on the distance from the light sources.
-                            For Cook-Torrance the object can be changed to appear either plastic either metallic, also from the
-                            keyboard with the keys ‘h’ and ‘n’.>
-                        </p>
+                </div>
+
+                <!-- TRANSMITTANCE EFFECTS -->
+                <div class="each-proj">
+                    <div class="cg-proj-headline">TRANSMITTANCE EFFECTS</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>ASSIGNMENT2 - TRANSMITTANCE EFFECTS
+                                The program uses a cubemap as the environment of the scene. The cubemap uses its own shader for
+                                displaying the cube and the textures.
+                                The application loads three objects (.obj files) a car, a teapot and a cube. The transmittance effects,
+                                Reflection, Refraction, Chromatic Dispersion and Fresnel, are all implemented in the shader files. The
+                                program can change the shaders by using the keyboard with the keys ‘t’ (reflection), ‘y’ (refraction),
+                                ‘u’ (Chromatic Dispersion’) and ‘I’ (Fresnel) so the effects can be changed and seen on all the objects
+                                while the program is running.
+                                The shader files create the transmittance effects by using the texture from the environment namely
+                                the textures of the cubemap.
+                                The program can also animate the objects by generating a rotating motion of the objects if the key
+                                ‘p’ is pressed.
+                                The scene can be manipulated by the use of the mouse and keyboard allowing movement within it
+                                and giving the possibility of viewing the objects from different angles.
+                                Libraries
+                                The libraries used for making the program are glfw, glew and stb_image, glm.
+                            </p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe src="https://www.youtube.com/embed/qvgyfhniP04" frameborder="0" allow="accelerometer;
+                              autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
     
-                <!-- Transmittance Effects -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/qvgyfhniP04" frameborder="0" allow="accelerometer;
-                              autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-                <p>ASSIGNMENT2 - TRANSMITTANCE EFFECTS
-                    The program uses a cubemap as the environment of the scene. The cubemap uses its own shader for
-                    displaying the cube and the textures.
-                    The application loads three objects (.obj files) a car, a teapot and a cube. The transmittance effects,
-                    Reflection, Refraction, Chromatic Dispersion and Fresnel, are all implemented in the shader files. The
-                    program can change the shaders by using the keyboard with the keys ‘t’ (reflection), ‘y’ (refraction),
-                    ‘u’ (Chromatic Dispersion’) and ‘I’ (Fresnel) so the effects can be changed and seen on all the objects
-                    while the program is running.
-                    The shader files create the transmittance effects by using the texture from the environment namely
-                    the textures of the cubemap.
-                    The program can also animate the objects by generating a rotating motion of the objects if the key
-                    ‘p’ is pressed.
-                    The scene can be manipulated by the use of the mouse and keyboard allowing movement within it
-                    and giving the possibility of viewing the objects from different angles.
-                    Libraries
-                    The libraries used for making the program are glfw, glew and stb_image, glm.
-                </p>
-    
                 <!-- BUMP AND NORMAL MAPPING -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/_rJrLR085VM" frameborder="0" allow="accelerometer;
+                <div class="each-proj">
+                    <div class="cg-proj-headline">BUMP AND NORMAL MAPPING</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>ASSIGNMENT3 - BUMP AND NORMAL MAPPING
+                                The application loads a cubemap as the environment for the scene.
+                                Within the scene it loads three different objects from obj files, a humanoid figure, a teapot and a
+                                box.
+                                For every object the tangents and bitangents are calculated and used to display three different
+                                normal textures. The normal textures are loaded by using 2 dds files for diffuse and specular texture
+                                and one bmp file for the normal part of the texture. The shaders display the textures on the objects.
+                                The scene can be manipulated from the keyboard giving the possibility of movement within the
+                                scene and viewing the objects from different angles.
+                                The objects can be animated by use of the keyboard. Pressing the ‘p’ key stats and stops the objects
+                                rotation.
+                                The texture of the objects can be modified from the keyboard allowing us to see the objects with
+                                normal mapping and without. It can clearly be seen that there is a huge difference and this
+                                difference is emphasized even more when the objects are rotating and the light falls on them in a
+                                different way.
+                                Libraries
+                                The libraries used for making the program are glfw, glew and stb_image, glm.
+                            </p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe src="https://www.youtube.com/embed/_rJrLR085VM" frameborder="0" allow="accelerometer;
                             autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-                <p>ASSIGNMENT3 - BUMP AND NORMAL MAPPING
-                    The application loads a cubemap as the environment for the scene.
-                    Within the scene it loads three different objects from obj files, a humanoid figure, a teapot and a
-                    box.
-                    For every object the tangents and bitangents are calculated and used to display three different
-                    normal textures. The normal textures are loaded by using 2 dds files for diffuse and specular texture
-                    and one bmp file for the normal part of the texture. The shaders display the textures on the objects.
-                    The scene can be manipulated from the keyboard giving the possibility of movement within the
-                    scene and viewing the objects from different angles.
-                    The objects can be animated by use of the keyboard. Pressing the ‘p’ key stats and stops the objects
-                    rotation.
-                    The texture of the objects can be modified from the keyboard allowing us to see the objects with
-                    normal mapping and without. It can clearly be seen that there is a huge difference and this
-                    difference is emphasized even more when the objects are rotating and the light falls on them in a
-                    different way.
-                    Libraries
-                    The libraries used for making the program are glfw, glew and stb_image, glm.
-                </p>
-    
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- MIPMAPS -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-2QZg95HU5E" frameborder="0" allow="accelerometer;
+                <div class="each-proj">
+                    <div class="cg-proj-headline">MIPMAPS</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>ASSIGNMENT4 - MIPMAPS
+                                The application shows the differences in texturing types name, with and without mipmaps.
+                                The program loads an obj file, a plane, and sets on it a checkerboard texture. The plane can be
+                                rotated to view the texture from different angles.
+                                The settings for the loadTexture function can be changed from the keyboard to one of the following:
+                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+                                The change in texture is more obvious if the plane is very tilted
+                
+                                Libraries
+                                The libraries used for making the program are glfw, glew and stb_image, glm.
+                            </p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/-2QZg95HU5E" frameborder="0" allow="accelerometer;
                             autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-                <p>ASSIGNMENT4 - MIPMAPS
-                    The application shows the differences in texturing types name, with and without mipmaps.
-                    The program loads an obj file, a plane, and sets on it a checkerboard texture. The plane can be
-                    rotated to view the texture from different angles.
-                    The settings for the loadTexture function can be changed from the keyboard to one of the following:
-                    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-                    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
-                    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-                    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-                    The change in texture is more obvious if the plane is very tilted
-    
-                    Libraries
-                    The libraries used for making the program are glfw, glew and stb_image, glm.
-                </p>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MICROFACETS MODEL  -->
+                <div class="each-proj">
+                    <div class="cg-proj-headline">MICROFACET MODELS</div>
+                    <div class="proj-contents">
+                        <div class="cg-proj-desc">
+                            <p>Microfacet Models</p>
+                            <p>Glitter or subtle glints are present in many materials. It applies both to dramatically glittery
+                                surfaces like glittery materials snow, craft glitter, metallic crafts and paints, but also to
+                                surfaces that present the same shifting in glints without actually being considered glittery.
+                                Less obvious glittery surfaces include everyday glossy materials. For example a standard
+                                power adapter presents bumps on its surface that create glints that appear and disappear with
+                                changes in viewpoints and lights. This kind of materials would appear too smooth in close-up
+                                without their specific glints.</p>
+                            <p>Objects that present flakes</p>
+                            <p> The first two outputs focus on representing an object that presents flakes within the
+                                composition of its material (Figure 2 and 3). It uses a normal texture that creates some forms
+                                on the object’s surface very similar to the surface of an object with crafted glitter on top.</p>
+                            </p>
+                            <p>Metallic Paint</p>
+                            <p>The next two shaders give the create a metallic paint type of shader.
+                                Metallic paints present multiple layers layers in order to provide the specific effect
+                                At least one coating of paint contains microflakes after which a clear coat paint layer is
+                                applied.</p>
+                            <p>Snow</p>
+                            <p>Snow and other materials present subtle glints based on the angle of view.</p>
+                            <p>To get the distinct sparkles that can be seen in snow a noise function was added to the texture
+                                that perturbs a grid pattern with some noise and with the view vector to let the glittering
+                                change based on the angle of view. This noise tries to imitate the specific glints present in
+                                snow. The glitter and sparkle effects are added to the final output colour.</p>
+                            
+                            <p>Craft Glitter Material</p>
+                        </div>
+                        <div class="cg-proj-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/jBESMWb-e_0" frameborder="0" allow="accelerometer;
+                            autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
     
