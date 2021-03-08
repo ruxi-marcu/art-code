@@ -17,16 +17,17 @@
     <section class="about" id="about">
         <div class="container">
             <!-- MY PROJECTS HEADLINE  -->
-            <div class="section-headline">
+            <!-- <div class="section-headline">
                 <h1 class="headline">About</h1>
-            </div>
+            </div> -->
 
             <!-- ABOUT TEXT  -->
             <!-- row #1 -->
             <div class="about-desc">
-                <p>This section incorporates a colection of projects made for the courses Computer Graphics and Real-Time Rendering.</p>
+                <p>This section incorporates a colection of projects made for the courses Augmented Reality and Real-Time Animation.</p>
                 <p>Each project has a video that was uploadeed to Youtube showing how the program runs and next to it there is a short description.</p>
-                <p>The programs were made using C/C++ and OpenGl and the shading was made in GLSL.</p>
+                <p>Most of the programs were made using C/C++ and OpenGl and the shading was made in GLSL.</p>
+                <p>There are also 2 programs made using Unity: The Semester Project for Augmented Reality and the Interactive Movie With Animated Character. </p>
             </div>
         </div>
     </section>
@@ -43,15 +44,16 @@
                     <div class="cg-proj-headline">Semester Project</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>The application window is separated into two viewports, one the size of the entire window and a smaller
-                                one that shows the orthoghraphical projection from above.</p>
-                            <p>The objects are organized into two different hierarchical structures, one of whitch can be moved by
-                                keyboard.</p>
-                            <p>The small hierarchy is formed from two stars one of which has been scaled and rotates around the root.
+                            <p>The application is a game with image targets, developed for Android devices. 
+                                The application was created using Vuforia and Unity and then deployed and tested on an Android device (Samsung Galaxy Tab S4, 10.5”).
                             </p>
-                            <p>The large hierarchy is formed from 6 stars and is capable of doing multiple transformations:
-                                translations, rotations and also combined transformations that give the illusioon of walking.</p>
-                            <p>All the stars have light effects they support ambient , diffuse, specular light and shininess.</p>
+                            <p>To each image target a character was attached that is being displayed on the image of the card on the application is running. In this game the characters used were provided by the Unity Asset Store and are a Barbarian Warrior and a mummy that is displayed three times on three of the targets.</p>
+                            <p>The aim of the game is to destroy the three mummies by using the barbarian character, that has the ability to move and shoot axes in different directions. Once a mummy is hit by an axe a health bar appears above it that allows the user to see how much life it has left. The health bar is created by using interface elements: canvas, panel and slider that are set to always face the camera, therefore the bar will always be visible regardless of the device movement. </p>
+                            <p>Both the barbarian and the three mummies use scripts to enable special actions and features. The barbarian script enables the character to instantiate new axes as the user taps on the screen. The character can also be rotated and translated by using different finger movements. For the user input the LeanTouch library was used, also downloaded from the Unity Asset Store. The application also displays a UI interface that is overlaid on top of the game in the bottom of the screen. This interface provides two extra features that can be used for the character, namely power and angle</p>
+                            <p>If all enemies are destroyed an animation attached to the object is played in a loop and a melody to let the user know that he won the game.</p>
+                            <p>The mummy script checks for collision between the axes thrown by the barbarian and its own box collider. If a collision occurred the current health is changed and then displayed in the heal bar. A particle system attached to the game object will be put to play and then stopped in coroutine and a sound played. If the health bar reaches 0% the game object will be destroyed and will disappear of the marker.</p>
+                                <hr>
+                            
                         </div>
                         <div class="cg-proj-video">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/P225OBgZAWc" frameborder="0" allow="accelerometer;
@@ -151,12 +153,32 @@ a loop.
                     <div class="cg-proj-headline">BLEND FACES</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>ASSIGNMENT1 - BLEND_FACES
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, at quis. Pariatur recusandae illum eligendi veniam sequi, magni quas doloremque rem inventore tenetur excepturi, dicta mollitia debitis, veritatis incidunt a?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis repellendus officia fugiat aut quia porro. Nemo repellat illum alias, ratione perspiciatis praesentium aperiam enim placeat voluptates, quas laboriosam hic?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officia ex vel. Fuga ea nesciunt sit repellat! Doloribus exercitationem nemo minus quibusdam at laudantium officiis, ea nobis facere! Itaque, ullam!
+                            <p>In the application I used as the ImGUI interface ImGUI for manipulating the weights of the blend
+                                shapes.
+                                All the obj models in the folder are loaded in buffers. The vertices, normals and indexes are stored
+                                for every face in variables of type std::vector<glm::vec3> respectively std::vector<int>. After
+                                everything is loaded all the indexed vertices are copied to a Eigen::MatrixXf. Every line of the matrix
+                                will contain all the vertices for 1 face, first the x values then the y and z. The same process is applied
+                                for the normal.
                             </p>
-                            <a href="https://github.com/ruxi-marcu/A1_BLEND_FACES"> SOURCE CODE</a>
+                            <p>The weights received as input from the ImGUI interface are copied in an Eigen::VectorXf. The weight
+                                on position zero is always set to 1. This weould actually represent the weight of the neutral face. This
+                                weight is added only to make the multiplication possible between the matrix with all the faces and
+                                the the weights vector</p>
+                            <p>This function loops through the matrix starting at row 1 because on row 0 the neutral face is loaded.
+                                In every loop the neutral face (row 0) is subtracted from the rest of the faces. Afterwards the
+                                transpose of the matrix is multiplied with the weights vector this will result in a vector that contains
+                                new vertices, these vertices will be used to draw the resulting face.
+                                The same function is used for the normals to get a vector that contains the normal of the new face.</p>
+                            <p>For the animation part a special ImGUI button has been created called Run Animation.</p>
+                            <p>A delay is implemented between every frame that is displayed, so the delay works by going to the next line of the matrix only after a certain
+                                time.</p>
+                            <p>For the vertex picking part two functions were used one for calculating the ray direction and one for
+                                finding the intersections with the triangles in the object. The ray picking function was implemented
+                                from Anton Gerdelan’s tutorials. It actually finds the direction of a ray from the mouse coordinates
+                                to the object in viewport space.</p>
+                            <a class="proj-github-lnk" href="https://github.com/ruxi-marcu/A1_BLEND_FACES"><i class="fab fa-github"></i> SOURCE CODE</a>
+                            <!-- <li><a href="https://github.com/ruxi-marcu"><i class="fab fa-github"></i></a></li> -->
                         </div>
                         <div class="cg-proj-video">
                             <img src="./a1_blend_faces.png" />
@@ -172,12 +194,21 @@ a loop.
                     <div class="cg-proj-headline">PLANE</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>ASSIGNMENT2 - PLANE
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, at quis. Pariatur recusandae illum eligendi veniam sequi, magni quas doloremque rem inventore tenetur excepturi, dicta mollitia debitis, veritatis incidunt a?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis repellendus officia fugiat aut quia porro. Nemo repellat illum alias, ratione perspiciatis praesentium aperiam enim placeat voluptates, quas laboriosam hic?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officia ex vel. Fuga ea nesciunt sit repellat! Doloribus exercitationem nemo minus quibusdam at laudantium officiis, ea nobis facere! Itaque, ullam!
-                            </p>
-                            <a href="https://github.com/ruxi-marcu/A2_PLANE"> SOURCE CODE</a>
+                            <p>There is a hierarchical structure implemented between the plane and the propeller. The propeller
+                                stays attached to the plane as the plane moves and also rotates around its own axis.</p>
+                            <p>The model can be rotated by using Euler angles and quaternions.
+                                The program starts by using Euler angles but this can be changed at any time to quaternions and
+                                back by using the keyboard.</p>
+                            <p>The program implements a third person camera and a first person camera that moves at the same
+                                    time with the plane.
+                                    For the first person camera the model matrix is decomposed in order to take out the orientation of
+                                    the camera. The camera position is changed to move the camera at the right position on the plane.
+                                    The quaternion extracted from glm::decompose, that gives the orientation, is then multiplyed with
+                                    the rotation matrix of the model and the newly created view is applied to the scene.</p>
+                            <p>The Gimbal lock for the euler angles can be achieved by doing a 90 degree roll and then a 90 degree
+                                pitch. After making these rotations one degree of freedom is lost and the plane loses the ability to to
+                                make a yaw rotation using Euler angles.</p>
+                            <a class="proj-github-lnk" href="https://github.com/ruxi-marcu/A2_PLANE"><i class="fab fa-github"></i> SOURCE CODE</a>
                         </div>
                         <div class="cg-proj-video">
                             <img src="./a2_plane.png" />

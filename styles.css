@@ -860,6 +860,14 @@ margin: 1rem;
 
 
 /* CV.HTML  */
+.cv-proj-link{
+    font-family: var(--headline-font);
+    color: var(--light-red);
+    /* font-size: 4rem; */
+    font-size: 3rem;
+    text-decoration: none;
+    font-weight:700;
+}
 .cv-proj{
     background-color: initial;
 }
@@ -886,6 +894,14 @@ margin: 1rem;
     background-color: aqua;
     width: 100%;
     /* height: auto; */
+    padding: 1.5rem 0;
+}
+
+.proj-github-lnk {
+    font-family: var(--headline-font);
+    color: var(--dark-grey);
+    font-size: 1.3rem;
+    font-weight: 700;
     padding: 1.5rem 0;
 }
 
@@ -933,6 +949,27 @@ margin: 1rem;
 }
 .blender-vid{
     width: 90vw;
+}
+
+
+/* UNDER CONSTRUCTION */
+.under-constr-img {
+    width:60%;
+    height:60%;
+    max-width:261px;
+    max-height:173px;
+}
+.under-constr-txt{
+    /* position: absolute;
+    top:90%;
+    left:50%; */
+
+}
+@media screen and (min-width: 700px){
+    .under-constr-img {
+        width:261px;
+        height:173px;
+    }
 }
 
 
