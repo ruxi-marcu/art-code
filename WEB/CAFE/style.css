@@ -468,3 +468,9 @@ footer {
     color: var(--link-clicked);
 }
 
+/* UNDER CONSTRUCTION */
+.under-constr-txt{
+    position: absolute;
+    top:0;
+}
+
