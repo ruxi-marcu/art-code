@@ -194,20 +194,13 @@ a loop.
                     <div class="cg-proj-headline">PLANE</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>There is a hierarchical structure implemented between the plane and the propeller. The propeller
-                                stays attached to the plane as the plane moves and also rotates around its own axis.</p>
-                            <p>The model can be rotated by using Euler angles and quaternions.
-                                The program starts by using Euler angles but this can be changed at any time to quaternions and
-                                back by using the keyboard.</p>
-                            <p>The program implements a third person camera and a first person camera that moves at the same
-                                    time with the plane.
-                                    For the first person camera the model matrix is decomposed in order to take out the orientation of
-                                    the camera. The camera position is changed to move the camera at the right position on the plane.
-                                    The quaternion extracted from glm::decompose, that gives the orientation, is then multiplyed with
-                                    the rotation matrix of the model and the newly created view is applied to the scene.</p>
+                            <p>There is a hierarchical structure implemented between the plane and the propeller so the propeller can spin independently of the plane's movement.</p>
+                            <p>The model can be rotated by using Euler angles and quaternions.</p>
                             <p>The Gimbal lock for the euler angles can be achieved by doing a 90 degree roll and then a 90 degree
                                 pitch. After making these rotations one degree of freedom is lost and the plane loses the ability to to
                                 make a yaw rotation using Euler angles.</p>
+                            <p>The program implements a third person camera and a first person camera.</p>
+                            
                             <a class="proj-github-lnk" href="https://github.com/ruxi-marcu/A2_PLANE"><i class="fab fa-github"></i> SOURCE CODE</a>
                         </div>
                         <div class="cg-proj-video">

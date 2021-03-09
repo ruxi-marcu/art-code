@@ -109,23 +109,14 @@
                     <div class="cg-proj-headline">TRANSMITTANCE EFFECTS</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>ASSIGNMENT2 - TRANSMITTANCE EFFECTS
-                                The program uses a cubemap as the environment of the scene. The cubemap uses its own shader for
-                                displaying the cube and the textures.
-                                The application loads three objects (.obj files) a car, a teapot and a cube. The transmittance effects,
-                                Reflection, Refraction, Chromatic Dispersion and Fresnel, are all implemented in the shader files. The
-                                program can change the shaders by using the keyboard with the keys ‘t’ (reflection), ‘y’ (refraction),
-                                ‘u’ (Chromatic Dispersion’) and ‘I’ (Fresnel) so the effects can be changed and seen on all the objects
-                                while the program is running.
-                                The shader files create the transmittance effects by using the texture from the environment namely
-                                the textures of the cubemap.
-                                The program can also animate the objects by generating a rotating motion of the objects if the key
-                                ‘p’ is pressed.
-                                The scene can be manipulated by the use of the mouse and keyboard allowing movement within it
-                                and giving the possibility of viewing the objects from different angles.
-                                Libraries
-                                The libraries used for making the program are glfw, glew and stb_image, glm.
-                            </p>
+                            <p> The program uses a cubemap as the environment of the scene. The cubemap uses its own shader.</p>
+                            <!-- <p> The application loads three objects (.obj files) a car, a teapot and a cube.</p> -->
+                            <p> The transmittance effects: Reflection, Refraction, Chromatic Dispersion and Fresnel, are all implemented in the shader files. </p>
+                            <p> The shader files create the transmittance effects by using the texture from the environment namely
+                                the textures of the cubemap.</p>
+                            <p> The scene can be manipulated by the use of the mouse and keyboard allowing movement within it and also the shaders can be switched while the program is running.</p>
+
+                            <a class="proj-github-lnk" href="https://github.com/ruxi-marcu/TRANSMITTANCE"><i class="fab fa-github"></i> SOURCE CODE</a>
                         </div>
                         <div class="cg-proj-video">
                             <iframe src="https://www.youtube.com/embed/qvgyfhniP04" frameborder="0" allow="accelerometer;
@@ -173,20 +164,10 @@
                     <div class="cg-proj-headline">MIPMAPS</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>ASSIGNMENT4 - MIPMAPS
-                                The application shows the differences in texturing types name, with and without mipmaps.
-                                The program loads an obj file, a plane, and sets on it a checkerboard texture. The plane can be
-                                rotated to view the texture from different angles.
-                                The settings for the loadTexture function can be changed from the keyboard to one of the following:
-                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
-                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-                                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-                                The change in texture is more obvious if the plane is very tilted
-                
-                                Libraries
-                                The libraries used for making the program are glfw, glew and stb_image, glm.
-                            </p>
+                            <p>The application shows the differences between texturing with mipmaps and without.
+                            <p>The program loads an obj file, a plane, and sets on it a checkerboard texture. The plane can be
+                                rotated to view the texture from different angles.</p>
+                            <p>The change in texture is more obvious if the plane is very tilted.</p>
                         </div>
                         <div class="cg-proj-video">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/-2QZg95HU5E" frameborder="0" allow="accelerometer;

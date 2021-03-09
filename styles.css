@@ -264,6 +264,19 @@ nav {
 
 /* MINE  */
 /* ABOUT  */
+.about-desc {
+    padding: 0 1rem;
+}
+@media screen and (min-width:576px){
+    .about-desc {
+        padding: 0 2rem;
+    }
+}
+@media screen and (min-width:700px){
+    .about-desc {
+        padding: 0 3rem;
+    }
+}
 
 /* PROJECTS  */
 .projects {
@@ -897,14 +910,6 @@ margin: 1rem;
     padding: 1.5rem 0;
 }
 
-.proj-github-lnk {
-    font-family: var(--headline-font);
-    color: var(--dark-grey);
-    font-size: 1.3rem;
-    font-weight: 700;
-    padding: 1.5rem 0;
-}
-
 @media screen and (min-width: 700px){
     .proj-contents {
         display: flex;
@@ -970,6 +975,17 @@ margin: 1rem;
         width:261px;
         height:173px;
     }
+}
+
+
+/* GITHUB SOURCE CODE  */
+.proj-github-lnk {
+    font-family: var(--headline-font);
+    color: var(--dark-grey);
+    font-size: 1.3rem;
+    font-weight: 700;
+    display:block;
+    padding: 1.5rem 0;
 }
 
 

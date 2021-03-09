@@ -468,13 +468,5 @@ footer {
     color: var(--link-clicked);
 }
 
-/* UNDER CONSTRUCTION */
-.under-constr-img {
-    width:5%;
-    height:10%;
-}
-.under-constr-txt{
-    position: absolute;
-    top:0;
-}
+
 
