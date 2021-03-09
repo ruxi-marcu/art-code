@@ -3,7 +3,7 @@ let widthVid, heightVid;
 let vidw, vidh;
 let divsize;
 
-console.log(screen.width);
+// console.log(screen.width);
 
 function init() {
         video = document.getElementById('gr-video');

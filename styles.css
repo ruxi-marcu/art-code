@@ -912,7 +912,7 @@ margin: 1rem;
     padding-left: 1rem;
 } */
 .cg-proj-video > iframe {
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 100%;
     /* height: auto; */
     padding: 1.5rem 0;
