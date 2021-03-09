@@ -52,7 +52,6 @@
                             <p>Both the barbarian and the three mummies use scripts to enable special actions and features. The barbarian script enables the character to instantiate new axes as the user taps on the screen. The character can also be rotated and translated by using different finger movements. For the user input the LeanTouch library was used, also downloaded from the Unity Asset Store. The application also displays a UI interface that is overlaid on top of the game in the bottom of the screen. This interface provides two extra features that can be used for the character, namely power and angle</p>
                             <p>If all enemies are destroyed an animation attached to the object is played in a loop and a melody to let the user know that he won the game.</p>
                             <p>The mummy script checks for collision between the axes thrown by the barbarian and its own box collider. If a collision occurred the current health is changed and then displayed in the heal bar. A particle system attached to the game object will be put to play and then stopped in coroutine and a sound played. If the health bar reaches 0% the game object will be destroyed and will disappear of the marker.</p>
-                                <hr>
                             
                         </div>
                         <div class="cg-proj-video">
@@ -81,63 +80,27 @@
                     <div class="cg-proj-headline">Interactive Movie with Animated Character</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>The project is created in Unity. The environment and characters were taken from the Unity Asset
-                                Store.
-                                The animation starts with an overview camera that films the entire scene and after which focuses on
-the main character of the movie. The camera at the beginning is a Cinemachine Dolly Track camera
-The camera follows the desired path and then stops in front of the character after which some State-
-Driven cameras are used to follow the character how he is pushing the chest and then moving
-around to sit on a rock. For the state driven camera more virtual cameras were added that are
-triggered by the different animations of the character. There are cameras for walking, sitting
-throwing and idle state. All these cameras are mixed with normal cameras that were added at
-different times in the timeline.
-The animation of the character is triggered through script and also the chest pushing was made
-through script.
-The cameras for the next part of the movie are Unity cameras for which animations with keyframes
-were made. The order in which each camera should be active in the scene is set through a timeline.
-The timeline contains the cameras used in the scene and also the soundtrack. The sounds were
-added to the timeline at the particular moment when they are supposed to play.
-The character, the barbarian, come with some animations but more animations were added from
-Mixamo. The model was uploaded in Mixamo different animations were chosen and then exported
-without mesh to be used in Unity. After importing the new animations in Unity the animations had
-to be changed to humanoid mode and adapted for the character in order to work properly.
-The character also uses face animations that were added on a different layer of the characters
-Animator controller. For the facial animations an animation mask was created to blend together the
-animations from the two different layers and therefore the facial animations could work together
-with different body animations resulting in a complex movement of the character.
-
-The skeleton has its own script and animator controller. Different camera animations were created
-in order to capture the different close-ups of the two characters and emphasize the facial
-movements. At this point the character shows anticipation and exaggeration through its facial
-features by having exaggerated expressions that show astonishment and then fear.
-
-The cameras show the use of ease in and ease out. They use arcs and interpolate between different
-positions and rotations.
-The skeleton has its own script and its own animator controller. Different animations are triggered
-from the script at particular times. The skeleton is displayed idle, dragging the chest, turning and
-then walking towards the main character.
-Both characters are rotated by using quaternions and euler angles to rotate their game objects.
-Physics with rigid body property was used to create the movement of the characters by adding
-velocity to their respective rigid bodies.
-After running away from the skeleton, the barbarian encounters a little mummy that exemplifies one
-of the principles of animation, namely squash and stretch. This animation was created by using
-keyframe animation and creating a new animation for the mummy character.
-After the entire animation is played the user is left to control the main character.
-Particle systems were added to the scene in the spot where the character can be controlled by the
-user. When the game starts fire can be seen by the characters feet.
-
-The character can be controlled with the keyboard and mouse. The character can walk, run and hit
-with its axe.
-A different script was created to incorporate the game behavior of the character. The movement of
-the character was set at different speeds based on the character walking or running.
-The walking and running take as input values from the keys. Different animations for walking
-straight, walking to the left, to the right and backwards are blended together using blend trees. For
-running a different blend tree was created that blends together the running animations. In order to
-make the character run, the shift key has to be pressed while also pressing the movement keys.
-The mouse triggers the attack animation of the character by making the character twirl and hit with
-its axe.
-If there is no input from the user, the character returns to its default pose and that animation runs in
-a loop.
+                            <p>The project is created in Unity.</p>
+                            <p>The animation starts with an overview camera (Cinemachine Dolly Track camera) that films the entire scene and afterwards some State-Driven cameras are used to follow the character.</p>
+                            <p>The animation of the character is triggered through script</p>
+                            <p>More animations were added to the characters from Mixamo and then adapted in Unity for the character.</p>
+                            <p>Face animations were added on a different layer of the characters
+                                Animator controller. An animation mask was created to blend together different
+                                animations so the facial animations could work together
+                                with different body animations.</p>
+                            <p>Physics with rigid body property was used to create the movement of the characters by adding
+                                velocity to their respective rigid bodies.</p>
+                            <ul>
+                                The project displays some of the principles of animations:
+                                <li><strong>squash and stretch - </strong>the little mummy (using keyframe animation)</li>
+                                <li><strong>anticipation and exaggeration - </strong>facial expressions</li>
+                                <li><strong>staging - </strong>cameras and sound</li>
+                            </ul>
+                            <p>A different script was created to incorporate the game behavior of the character. The movement of
+                                the character was set at different speeds based on the character movement walking or running.
+                                Different animations are blended together using blend trees. For running a different blend tree was created that blends together the running animations.
+                                The mouse triggers the attack animation of the character by making the character twirl and hit with
+                                its axe.</p>
                             </p>
                         </div>
                         <div class="cg-proj-video">
@@ -153,30 +116,19 @@ a loop.
                     <div class="cg-proj-headline">BLEND FACES</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>In the application I used as the ImGUI interface ImGUI for manipulating the weights of the blend
-                                shapes.
-                                All the obj models in the folder are loaded in buffers. The vertices, normals and indexes are stored
-                                for every face in variables of type std::vector<glm::vec3> respectively std::vector<int>. After
-                                everything is loaded all the indexed vertices are copied to a Eigen::MatrixXf. Every line of the matrix
-                                will contain all the vertices for 1 face, first the x values then the y and z. The same process is applied
-                                for the normal.
+                            <p>The ImGUI interface is used for manipulating the weights of the blend shapes.</p>
+                            <p>The Eigen library is used for maths. The vertices, normals and indexes from every face are copied to 
+                                Eigen::MatrixXf where every row stores one face.
                             </p>
                             <p>The weights received as input from the ImGUI interface are copied in an Eigen::VectorXf. The weight
                                 on position zero is always set to 1. This weould actually represent the weight of the neutral face. This
                                 weight is added only to make the multiplication possible between the matrix with all the faces and
                                 the the weights vector</p>
-                            <p>This function loops through the matrix starting at row 1 because on row 0 the neutral face is loaded.
-                                In every loop the neutral face (row 0) is subtracted from the rest of the faces. Afterwards the
-                                transpose of the matrix is multiplied with the weights vector this will result in a vector that contains
-                                new vertices, these vertices will be used to draw the resulting face.
-                                The same function is used for the normals to get a vector that contains the normal of the new face.</p>
-                            <p>For the animation part a special ImGUI button has been created called Run Animation.</p>
-                            <p>A delay is implemented between every frame that is displayed, so the delay works by going to the next line of the matrix only after a certain
-                                time.</p>
-                            <p>For the vertex picking part two functions were used one for calculating the ray direction and one for
-                                finding the intersections with the triangles in the object. The ray picking function was implemented
-                                from Anton Gerdelan’s tutorials. It actually finds the direction of a ray from the mouse coordinates
-                                to the object in viewport space.</p>
+                            <p>The transpose of the matrix is multiplied with the weights vector and the resulting vector will contain the
+                               new vertices and respectively the new normals that will be used to draw the resulting face.</p>
+                            <p>The animation is made by reading succesive weights from a file and generating the coresponding faces.</p>
+                            <p>For the vertex picking part two functions were used one for calculating the ray direction and one for 
+                                finding the intersections with the triangles in the object.</p>
                             <a class="proj-github-lnk" href="https://github.com/ruxi-marcu/A1_BLEND_FACES"><i class="fab fa-github"></i> SOURCE CODE</a>
                             <!-- <li><a href="https://github.com/ruxi-marcu"><i class="fab fa-github"></i></a></li> -->
                         </div>

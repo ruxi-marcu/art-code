@@ -903,6 +903,14 @@ margin: 1rem;
 .proj-contents{
     padding: 0 1rem;
 }
+.cg-proj-desc > ul {
+    font-size: 1.6rem;
+    text-align: left;
+    list-style-position:inside;
+}
+/* .cg-proj-desc > ul>li{
+    padding-left: 1rem;
+} */
 .cg-proj-video > iframe {
     background-color: aqua;
     width: 100%;

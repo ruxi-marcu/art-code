@@ -17,9 +17,9 @@
     <section class="about" id="about">
         <div class="container">
             <!-- MY PROJECTS HEADLINE  -->
-            <div class="section-headline">
+            <!-- <div class="section-headline">
                 <h1 class="headline">About</h1>
-            </div>
+            </div> -->
 
             <!-- ABOUT TEXT  -->
             <!-- row #1 -->
@@ -79,22 +79,15 @@
                     <div class="cg-proj-headline">REFLECTANCE</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p> I have created a scene into which I loaded two obj files a teapot and a star.
-                                The scene is displayed in 3 different viewports.
-                                For every viewport the objects are displayed with a different type of reflectance. The 3 types
-                                implemented are, from left to right, Blinn-Phong, Toon, and Cook-Torrance.
-                                I have implemented two different light sources, one with blue color and one with pink at different
-                                distances from the objects.
-                                The animation of the objects can be turned on and off by using the ‘p’ key.
-                                The specular, diffuse and shininess parameters can be increased or decreased from the keyboard
-                                while the animation in running, using the keys ‘a’,’z’,’s’,’x’ and ‘d’,’c’.
-                                The specular and shininess parameters are available only for Blinn-Phong and the diffuse parameter
-                                is common for both Blinn-Phong and Toon.
-                                For Cook-Torrance none of the 3 parameters will have any effect, since they are all calculated based
-                                on the distance from the light sources.
-                                For Cook-Torrance the object can be changed to appear either plastic either metallic, also from the
-                                keyboard with the keys ‘h’ and ‘n’.>
-                            </p>
+                            <p>The scene is separated in 3 viewports and each viewport shows a different type of reflactance.</p>
+                            <p>The 3 types implemented are, from left to right, Blinn-Phong, Toon, and Cook-Torrance.</p>
+                            <p>The specular, diffuse and shininess parameters can be increased or decreased from the keyboard.</p>
+                            <ul> Different reflectance models support different parameters:
+                                <li><strong>Blinn-Phong -</strong> specular, diffuse, shininess</li>
+                                <li><strong>Toon -</strong> diffuse</li>
+                                <li><strong>Cook-Torrance -</strong> none of the 3 since they are all calculated based on the distance from the light sources, 
+                                    but supports a different parameter that changes the appearance to either plastic or metallic. </li>
+                            </ul>
                         </div>
                         <div class="cg-proj-video">
                             <iframe src="https://www.youtube.com/embed/vqqYKmQpQ-I" frameborder="0" allow="accelerometer;
@@ -131,24 +124,15 @@
                     <div class="cg-proj-headline">BUMP AND NORMAL MAPPING</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>ASSIGNMENT3 - BUMP AND NORMAL MAPPING
-                                The application loads a cubemap as the environment for the scene.
-                                Within the scene it loads three different objects from obj files, a humanoid figure, a teapot and a
-                                box.
-                                For every object the tangents and bitangents are calculated and used to display three different
-                                normal textures. The normal textures are loaded by using 2 dds files for diffuse and specular texture
-                                and one bmp file for the normal part of the texture. The shaders display the textures on the objects.
-                                The scene can be manipulated from the keyboard giving the possibility of movement within the
-                                scene and viewing the objects from different angles.
-                                The objects can be animated by use of the keyboard. Pressing the ‘p’ key stats and stops the objects
-                                rotation.
-                                The texture of the objects can be modified from the keyboard allowing us to see the objects with
-                                normal mapping and without. It can clearly be seen that there is a huge difference and this
-                                difference is emphasized even more when the objects are rotating and the light falls on them in a
-                                different way.
-                                Libraries
-                                The libraries used for making the program are glfw, glew and stb_image, glm.
-                            </p>
+                            <p>For every object loaded in the scene the tangents and bitangents are calculated and used to display 3 different
+                                normal textures.</p>
+                            <p>The normal textures are loaded by using 2 dds files for diffuse and specular texture
+                                and one bmp file for the normal part of the texture. The textures are displayed by the shaders.</p>
+                            <p>The scene can be manipulated from the keyboard giving the possibility of movement within the
+                                scene and viewing the objects from different angles.</p>
+                            <p>The texture can be modified to show the objects with or without normal mapping in order to emphasize the difference.</p>
+
+                            <a class="proj-github-lnk" href="https://github.com/ruxi-marcu/NORMAL-MAPPING"><i class="fab fa-github"></i> SOURCE CODE</a>
                         </div>
                         <div class="cg-proj-video">
                             <iframe src="https://www.youtube.com/embed/_rJrLR085VM" frameborder="0" allow="accelerometer;
@@ -182,7 +166,6 @@
                     <div class="cg-proj-headline">MICROFACET MODELS</div>
                     <div class="proj-contents">
                         <div class="cg-proj-desc">
-                            <p>Microfacet Models</p>
                             <p>Glitter or subtle glints are present in many materials. It applies both to dramatically glittery
                                 surfaces like glittery materials snow, craft glitter, metallic crafts and paints, but also to
                                 surfaces that present the same shifting in glints without actually being considered glittery.
@@ -190,24 +173,27 @@
                                 power adapter presents bumps on its surface that create glints that appear and disappear with
                                 changes in viewpoints and lights. This kind of materials would appear too smooth in close-up
                                 without their specific glints.</p>
-                            <p>Objects that present flakes</p>
-                            <p> The first two outputs focus on representing an object that presents flakes within the
-                                composition of its material (Figure 2 and 3). It uses a normal texture that creates some forms
-                                on the object’s surface very similar to the surface of an object with crafted glitter on top.</p>
-                            </p>
-                            <p>Metallic Paint</p>
-                            <p>The next two shaders give the create a metallic paint type of shader.
-                                Metallic paints present multiple layers layers in order to provide the specific effect
-                                At least one coating of paint contains microflakes after which a clear coat paint layer is
-                                applied.</p>
-                            <p>Snow</p>
-                            <p>Snow and other materials present subtle glints based on the angle of view.</p>
-                            <p>To get the distinct sparkles that can be seen in snow a noise function was added to the texture
+                            <ul>
+                                <li>
+                                    <strong>Objects that present flakes - </strong>
+                                    a normal texture is used to create some forms
+                                on the object’s surface very similar to the surface of an object with crafted glitter on top.
+                                </li>
+                                <li>
+                                    <strong>Metallic paints - </strong>
+                                    present multiple layers layers out of which at least one contains microflakes.
+                                </li>
+                                <li>
+                                    <strong>Snow and other materials - </strong>
+                                    present subtle glints based on the angle of view.
+                                    To get the distinct sparkles that can be seen in snow a noise function was added to the texture
                                 that perturbs a grid pattern with some noise and with the view vector to let the glittering
                                 change based on the angle of view. This noise tries to imitate the specific glints present in
-                                snow. The glitter and sparkle effects are added to the final output colour.</p>
-                            
-                            <p>Craft Glitter Material</p>
+                                snow. The glitter and sparkle effects are added to the final output colour.
+                                </li>
+                            </ul>
+
+                            <a class="proj-github-lnk" href="https://github.com/ruxi-marcu/MICROFACET_MODELS"><i class="fab fa-github"></i> SOURCE CODE</a>
                         </div>
                         <div class="cg-proj-video">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/jBESMWb-e_0" frameborder="0" allow="accelerometer;
