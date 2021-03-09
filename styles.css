@@ -957,11 +957,30 @@ margin: 1rem;
 }
 
 /* BLENDER */
+.blend-proj {
+    background-color: var(--light-grey);
+    padding: 0;
+}
+.each-blend-proj{
+    padding: 2rem;
+}
 .link-tutorials{
     font-size: 1.6rem;
 }
 .blender-vid{
     width: 90vw;
+}
+@media screen and (min-width: 700px){
+    .blend-proj {
+        padding: 2rem 0;
+    }
+    .each-blend-proj{
+        padding: 4rem 3rem;
+    }
+    .blender-vid{
+        width:530px;
+        height:auto;
+    }
 }
 
 
