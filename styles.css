@@ -955,6 +955,10 @@ margin: 1rem;
     width:90vw;
     margin:auto;
 }
+.night-desc {
+    padding: 0 1rem;
+    padding-bottom: 1.5rem;
+}
 
 /* BLENDER */
 .blend-proj {
