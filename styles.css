@@ -239,6 +239,9 @@ nav {
     color: var(--light-red);
     font-size: 4rem;
 }
+.footer {
+    font-size: 2rem;
+}
 .hero-text p{
     color: var(--pink);
     /* font-size: 1.6rem; */
@@ -956,8 +959,8 @@ margin: 1rem;
     margin:auto;
 }
 .night-desc {
-    padding: 0 1rem;
-    padding-bottom: 1.5rem;
+    padding: 2rem 1rem;
+    /* padding-bottom: 1.5rem; */
 }
 
 /* BLENDER */
