@@ -239,9 +239,6 @@ nav {
     color: var(--light-red);
     font-size: 4rem;
 }
-.footer {
-    font-size: 2rem;
-}
 .hero-text p{
     color: var(--pink);
     /* font-size: 1.6rem; */
@@ -573,6 +570,9 @@ footer {
     /* color: pink; */
     font-size: 2rem;
     padding: .5rem;
+}
+.headline-footer {
+    font-size: 2rem;
 }
 
 
