@@ -673,6 +673,9 @@ h2 {
 .math-formula {
     font-size: 1.29rem;
 }
+.cv-project{
+    padding: 2rem 0;
+}
 
 
 /* FILE LOADER  */
