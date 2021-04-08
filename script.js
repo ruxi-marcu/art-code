@@ -1,4 +1,5 @@
-$(function () { /*document ready function*/
+$(document).ready(function () {
+// $(function () { /*document ready function*/
     
     $('.hamburger-menu').on('click', function () {
         $('.toggle').toggleClass('open');
@@ -9,38 +10,38 @@ $(function () { /*document ready function*/
 
     // });
 
-    $("#cont-form").validate({
-        highlight: function(element, errorClass, validClass) {
-            $(element).addClass(errorClass).removeClass(validClass);
-            console.log('element');
-            console.log(element);
-            console.log(element.classList);
-            console.log(element.form);
-            // $(element.form).find(element.id).addClass(errorClass);
-          },
-        //   unhighlight: function(element, errorClass, validClass) {
-        //     $(element).removeClass(errorClass).addClass(validClass);
-        //     $(element.form).find("label[for=" + element.id + "]")
-        //       .removeClass(errorClass);
-        //   },
-        rules: {
-        fname : {
-            required: true,
-            lettersonly: true,
-            minlength: 3,
-        },
-        lname : {
-            required: true,
-            lettersonly: true,
-            minlength: 3,
-        },
-        email: {
-            required: true,
-            email: true,
-        },
+    // $("#cont-form").validate({
+    //     highlight: function(element, errorClass, validClass) {
+    //         $(element).addClass(errorClass).removeClass(validClass);
+    //         console.log('element');
+    //         console.log(element);
+    //         console.log(element.classList);
+    //         console.log(element.form);
+    //         // $(element.form).find(element.id).addClass(errorClass);
+    //       },
+    //     //   unhighlight: function(element, errorClass, validClass) {
+    //     //     $(element).removeClass(errorClass).addClass(validClass);
+    //     //     $(element.form).find("label[for=" + element.id + "]")
+    //     //       .removeClass(errorClass);
+    //     //   },
+    //     rules: {
+    //     fname : {
+    //         required: true,
+    //         lettersonly: true,
+    //         minlength: 3,
+    //     },
+    //     lname : {
+    //         required: true,
+    //         lettersonly: true,
+    //         minlength: 3,
+    //     },
+    //     email: {
+    //         required: true,
+    //         email: true,
+    //     },
 
-        }
-        });
+    //     }
+    //     });
 
     //validateform();
 
